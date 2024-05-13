@@ -1,0 +1,223 @@
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #1b1b1b; /*#010101*/
+  }
+  
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    padding: 10px 20px;
+    position: relative;
+  }
+  
+  .nav-links {
+    display: flex;
+    justify-content: space-around;
+    width: 13%;
+  }
+  
+  .nav-links li {
+    list-style: none;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+  }
+  
+  .burger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+  }
+  
+  .burger div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 3px;
+  }
+  
+  .logo {
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    margin-right: 20px;
+    position: relative;
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
+    animation: glowText 1.5s infinite alternate; 
+  }
+  
+  .logo::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    bottom: -5px;
+    left: -5px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0);
+    animation: glowCorner 1.5s infinite alternate; 
+  }
+
+  @keyframes glowText {
+    0% {
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.5); 
+    }
+    100% {
+      text-shadow: 0 0 20px rgb(255, 255, 255), 0 0 30px rgba(255, 255, 255, 0.7), 0 0 40px rgba(255, 255, 255, 0.5), 0 0 50px rgba(209, 232, 255, 0.4), 0 0 60px rgba(158, 158, 158, 0.3); /* Bayangan saat glow */
+    }
+  }
+  
+  @keyframes glowCorner {
+    0% {
+      box-shadow: 0 0 10px #411c45;   
+    }
+    100% {
+      box-shadow: 0 0 30px #9525a2;  
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .nav-links {
+      position: absolute;
+      right: 0;
+      height: 92vh;
+      top: 8vh;
+      background-color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 50%;
+      transform: translateX(100%);
+      transition: transform 0.5s ease-in;
+    }
+  
+    .nav-links li {
+      opacity: 0;
+    }
+  
+    .burger {
+      display: flex;
+    }
+  }
+  
+  .nav-active {
+    transform: translateX(0%);
+  }
+  
+  .fade-in {
+    animation: fadeIn 0.5s ease forwards;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+ /* CAR IMAGE */
+  .car {
+    position: absolute;
+    width: 800px;
+    top: 300px; 
+    left: 50%;
+    transform: translate(-50%); 
+  }
+
+  .car-text {
+    position: absolute;
+    top: 32%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: bold; 
+    color: white; 
+    font-size: 50px;  /* 24 */
+    animation: fadeInText 1.5s ease forwards; 
+    opacity: 0; 
+  }
+  
+  @keyframes fadeInText {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1; 
+    }
+  }
+
+ /* CHANGE CAR COLOR */
+  .floating-button {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+  }
+  
+  .circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .white {
+    background-color: white;
+  }
+
+  .raja {
+    background-color: #dabdab;
+  }
+
+  .black {
+    background-color: #000000;
+  }
+
+   /* PRICING CARD */
+   .pricing-card {
+    width: 200px;
+    padding: 30px;
+    border-radius: 7px;
+    background: linear-gradient(to right, #1E0342, #35374B); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-top: 700px; 
+  }
+  
+  .price-text {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: white; 
+  }
+  
+  .purchase-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    outline: none;
+    background-color: transparent; 
+    color: white;
+    border: 2px solid white; 
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .purchase-button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  

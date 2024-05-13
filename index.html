@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rian Kopling - Simpel website</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <nav>
+    <div class="logo">RIAN KOPLING (CAR SELLER)</div>
+    <ul class="nav-links">
+      <li><a href="#">About</a></li>
+      <li><a href="#">Testimonial</a></li>  
+      <li><a href="#">Contact us</a></li>
+    </ul>
+    <div class="burger">
+      <div class="line1"></div>
+      <div class="line2"></div>
+      <div class="line3"></div>
+    </div>
+  </nav>
+
+  <img class="car" src="images/BLACK CAR.png" alt="Black Car">
+  <div class="car-text">Maserati GranTurismo (BLACK EDITION)</div>
+
+  <div class="pricing-card">
+    <div class="price-text">Price: $246.268.836</div>
+    <button class="purchase-button">Purchase</button>
+  </div>  
+  
+
+  <div class="floating-button">
+    <div class="circle white"></div>
+    <div class="circle raja"></div>
+    <div class="circle black"></div>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/gsap.min.js"></script>
+
+  <script>
+    const carImage = document.querySelector('.car');
+    const carText = document.querySelector('.car-text');
+    const blackButton = document.querySelector('.circle.black');
+    const rianButton = document.querySelector('.circle.raja');
+    const whiteButton = document.querySelector('.circle.white');
+
+    whiteButton.addEventListener('click', function() {
+    gsap.killTweensOf('.car, .car-text');
+    gsap.from('.car', { duration: 2, y: '-100%', ease: 'back' })
+    gsap.from('.logo', { duration: 2, y: '-190%', ease: 'bounce' })
+    gsap.from('.nav-links', { duration: 1, opacity: 0, delay: 1, stagger: .5 })
+    gsap.from('.car-text', { duration: 2, x: '-100%', ease: 'back' })
+
+    carImage.src = 'images/WHITE CAR.png';
+    carImage.alt = 'White Car';
+    carText.textContent = 'Maserati GranTurismo (WHITE EDITION)';
+  });
+
+    blackButton.addEventListener('click', function() {
+    gsap.killTweensOf('.car, .car-text');
+    gsap.from('.car', { duration: 2, y: '-100%', ease: 'back' })
+    gsap.from('.logo', { duration: 2, y: '-190%', ease: 'bounce' })
+    gsap.from('.nav-links', { duration: 1, opacity: 0, delay: 1, stagger: .5 })
+    gsap.from('.car-text', { duration: 2, x: '-100%', ease: 'back' })
+
+    carImage.src = 'images/BLACK CAR.png';
+    carImage.alt = 'Black Car';
+    carText.textContent = 'Maserati GranTurismo (BLACK EDITION)';
+  });
+
+    rianButton.addEventListener('click', function() {
+    gsap.killTweensOf('.car, .car-text');
+    gsap.from('.car', { duration: 2, y: '-100%', ease: 'back' })
+    gsap.from('.logo', { duration: 2, y: '-190%', ease: 'bounce' })
+    gsap.from('.nav-links', { duration: 1, opacity: 0, delay: 1, stagger: .5 })
+    gsap.from('.car-text', { duration: 2, x: '-100%', ease: 'back' })
+
+    carImage.src = 'images/RIAN CAR.png';
+    carImage.alt = 'Raja Car';
+    carText.textContent = 'Maserati GranTurismo (RAJA EDITION)';
+  });
+
+    gsap.from('.car', { duration: 2, y: '-100%', ease: 'back' })
+    gsap.from('.car-text', { duration: 2, x: '-100%', ease: 'back' })
+    gsap.from('.logo', { duration: 2, y: '-190%', ease: 'bounce' })
+    gsap.from('.nav-links', { duration: 1, opacity: 0, delay: 1, stagger: .5 })
+
+  </script>
+</body>
+</html>
