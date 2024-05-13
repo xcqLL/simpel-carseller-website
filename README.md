@@ -1,11 +1,13 @@
 # simpel-carseller-website
 
-  Leanguage 
-**HTML,CSS,JS**
-  Include
-**GSAP ANIMATION, GLOW EFFECT**
+- Glow effect
+- GSAP animation
+
+### Display : https://xcqll.github.io/simpel-carseller-website/
+  
 # NOTE : 
-> where can I run that file
+> where can I run that file 
+
 ```
 VScode : https://code.visualstudio.com/download
 ```
